@@ -1,0 +1,41 @@
+$star-space : 0px;
+$star-section-width: 300px;
+$star-section-background: none;
+$star-color: orange;
+$star-background: #eee;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 15px;
+    padding: 10px;
+}
+
+[data-star-rating]{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    background: $star-section-background;
+    width: $star-section-width;
+    >div{
+        position: relative;
+        width: calc( ( 100% - ( #{$star-space} * 4) ) / 5 );
+        height: 0;
+        padding-top: 18%;
+        background: $star-background;
+        clip-path: polygon(
+            50% 0, 65% 33%, 100% 38%, 75% 64%, 80% 100%,
+            50% 78%, 20% 100%, 25% 64%, 0 38%, 35% 33%, 50% 0
+        );
+        >div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: $star-color;
+        }
+    }
+}
